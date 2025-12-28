@@ -1,7 +1,35 @@
-export class CreateUserService {
-  async execute() {
-    console.log('User created.')
+import { hash } from 'bcryptjs'
+import prismaClient from '../../prisma'
 
-    return "User created successfully";
+interface createUserProps {
+  name: string
+  email: string
+  password: string
+}
+
+export class CreateUserService {
+  async execute({ name, email, password }: createUserProps) {
+    // Check user alraedy exists
+    const userAlreadyExists = await prismaClient.user.findFirst({
+      where: {
+        email,
+      },
+    })
+
+    if (userAlreadyExists) {
+      throw new Error('The user already exists!')
+    }
+
+    const passwordHash = await hash(password, 8)
+
+    // Create a user on Database
+    const user = await prismaClient.user.create({
+      data: {
+        name,
+        email,
+        password: passwordHash,
+      },
+    })
+    return user.name
   }
 }
