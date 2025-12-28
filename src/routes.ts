@@ -1,13 +1,21 @@
 import { Router } from 'express'
+import { AuthUserController } from './controllers/users/AuthUserController'
 import { CreateUserController } from './controllers/users/CreateUserController'
 import { validateSchema } from './middleware/validateSchema'
-import { createUserSchema } from './schemas/userSchema'
+import { schema } from './schemas'
 
 export const router = Router()
 
-// Get all users
+// Create a user
 router.post(
   '/users',
-  validateSchema(createUserSchema),
+  validateSchema(schema.createUserSchema),
   new CreateUserController().handle
+)
+
+// Login user
+router.post(
+  '/session',
+  validateSchema(schema.authUserSchema),
+  new AuthUserController().handle
 )
