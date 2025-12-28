@@ -11,6 +11,6 @@ export class CreateUserController {
 
     const user = await createUserService.execute({ name, email, password })
 
-    res.json({ message: user })
+    res.json(user)
   }
 }

@@ -29,7 +29,14 @@ export class CreateUserService {
         email,
         password: passwordHash,
       },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        createdAt: true,
+      },
     })
-    return user.name
+    return user
   }
 }
