@@ -1,4 +1,3 @@
-// import 'express-async-errors'
 import express, {
   type NextFunction,
   type Request,

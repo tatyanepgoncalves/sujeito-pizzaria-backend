@@ -1,6 +1,8 @@
 import { Router } from 'express'
 import { AuthUserController } from './controllers/users/AuthUserController'
 import { CreateUserController } from './controllers/users/CreateUserController'
+import { DetailsUserController } from './controllers/users/DetailsUserController'
+import { isAuthenticated } from './middleware/isAuthenticated'
 import { validateSchema } from './middleware/validateSchema'
 import { schema } from './schemas'
 
@@ -19,3 +21,6 @@ router.post(
   validateSchema(schema.authUserSchema),
   new AuthUserController().handle
 )
+
+// User login details
+router.get('/me', isAuthenticated, new DetailsUserController().handle)

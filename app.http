@@ -15,3 +15,7 @@ Content-Type: application/json
   "email": "leon@test.com",
   "password": "senha123"
 }
+
+###
+GET http://localhost:3333/me
+Authorization: Bearer authToken
