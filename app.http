@@ -2,9 +2,10 @@ POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "name": "Leon Lucchese", 
-  "email": "leon@test.com",
-  "password": "senha123"
+  "name": "Marcco Lucchese", 
+  "email": "marccc@test.com",
+  "password": "senha123", 
+  "role": "ADMIN"
 }
 
 ###
@@ -18,4 +19,13 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3333/me
-Authorization: Bearer authToken
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTGVvbiBMdWNjaGVzZSIsImVtYWlsIjoibGVvbkB0ZXN0LmNvbSIsImlhdCI6MTc2NzAxNjgyOCwiZXhwIjoxNzY5NjA4ODI4LCJzdWIiOiJmNmRmYzJjYy00MTlmLTRlZWEtYTI4Ny1jZjNhMmU5OTdkMmUifQ.WGi6kxh2Db1-Ah1J_MnA03BeInhx1u3OIyvFVHDuExE
+
+###
+POST http://localhost:3333/category
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTGVvbiBMdWNjaGVzZSIsImVtYWlsIjoibGVvbkB0ZXN0LmNvbSIsImlhdCI6MTc2NzAxNjgyOCwiZXhwIjoxNzY5NjA4ODI4LCJzdWIiOiJmNmRmYzJjYy00MTlmLTRlZWEtYTI4Ny1jZjNhMmU5OTdkMmUifQ.WGi6kxh2Db1-Ah1J_MnA03BeInhx1u3OIyvFVHDuExE
+Content-Type: application/json
+
+{
+  "name": "Sobremesas"
+}
