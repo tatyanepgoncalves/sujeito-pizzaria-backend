@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { CreateCategoryController } from './controllers/categories/CreateCategoryController'
+import { GetCategoryController } from './controllers/categories/GetCategoryController'
 import { AuthUserController } from './controllers/users/AuthUserController'
 import { CreateUserController } from './controllers/users/CreateUserController'
 import { DetailsUserController } from './controllers/users/DetailsUserController'
@@ -32,5 +33,9 @@ router.post(
   '/category',
   isAuthenticated,
   isAdmin,
+  validateSchema(schema.createCategorySchema),
   new CreateCategoryController().handle
 )
+
+// Get categories
+router.get('/category', isAuthenticated, new GetCategoryController().handle)

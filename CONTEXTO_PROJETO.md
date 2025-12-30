@@ -122,6 +122,7 @@ backend/
 │   ├── routes.ts             # Definição de todas as rotas
 │   └── server.ts             # Configuração e inicialização do servidor
 ├── .env                      # Variáveis de ambiente
+├── .env.example              # Variáveis de ambiente de exemplo
 ├── package.json              # Dependências e scripts
 ├── prisma.config.ts          # Configurações adicionais do Prisma
 └── tsconfig.json             # Configurações do TypeScript
