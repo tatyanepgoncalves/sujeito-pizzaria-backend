@@ -1,5 +1,6 @@
 import { authUserSchema } from './authUserSchema'
 import { createCategorySchema } from './createCategorySchema'
+import { createOrderSchema } from './createOrderSchema'
 import { createProductSchema } from './createProductSchema'
 import { createUserSchema } from './createUserSchema'
 import { getProductSchema } from './getProductSchema'
@@ -10,4 +11,5 @@ export const schema = {
   createCategorySchema,
   getProductSchema,
   createProductSchema,
+  createOrderSchema,
 }
