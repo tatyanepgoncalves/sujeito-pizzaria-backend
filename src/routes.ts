@@ -3,6 +3,7 @@ import multer from 'multer'
 import uploadConfig from './config/multer'
 import { CreateCategoryController } from './controllers/categories/CreateCategoryController'
 import { GetCategoryController } from './controllers/categories/GetCategoryController'
+import { AddItemOrderController } from './controllers/orders/AddItemOrderController'
 import { CreateOrderController } from './controllers/orders/CreateOrderController'
 import { GetOrderController } from './controllers/orders/GetOrderController'
 import { CreateProductController } from './controllers/products/CreateProductController'
@@ -90,4 +91,12 @@ router.post(
   isAuthenticated,
   validateSchema(schema.createOrderSchema),
   new CreateOrderController().handle
+)
+
+// Add item to the order
+router.post(
+  '/order/add',
+  isAuthenticated,
+  validateSchema(schema.addItemSchema),
+  new AddItemOrderController().handle
 )
