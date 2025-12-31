@@ -4,6 +4,7 @@ import uploadConfig from './config/multer'
 import { CreateCategoryController } from './controllers/categories/CreateCategoryController'
 import { GetCategoryController } from './controllers/categories/GetCategoryController'
 import { CreateProductController } from './controllers/products/CreateProductController'
+import { GetProductByCategoryController } from './controllers/products/GetProductByCategoryController'
 import { GetProductController } from './controllers/products/GetProductController'
 import { AuthUserController } from './controllers/users/AuthUserController'
 import { CreateUserController } from './controllers/users/CreateUserController'
@@ -60,4 +61,11 @@ router.post(
   isAdmin,
   upload.single('file'),
   new CreateProductController().handle
+)
+
+// Get products by category
+router.get(
+  '/category/products',
+  isAuthenticated,
+  new GetProductByCategoryController().handle
 )
