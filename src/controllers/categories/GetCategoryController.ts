@@ -2,7 +2,7 @@ import type { Request, Response } from 'express'
 import { GetCategoryService } from '../../services/categories/GetCategoryService'
 
 export class GetCategoryController {
-  async handle(req: Request, res: Response) {
+  async handle(_: Request, res: Response) {
     const getCategoryService = new GetCategoryService()
 
     const categories = await getCategoryService.execute()

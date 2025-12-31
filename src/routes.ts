@@ -1,6 +1,9 @@
 import { Router } from 'express'
+import multer from 'multer'
+import uploadConfig from './config/multer'
 import { CreateCategoryController } from './controllers/categories/CreateCategoryController'
 import { GetCategoryController } from './controllers/categories/GetCategoryController'
+import { CreateProductController } from './controllers/products/CreateProductController'
 import { GetProductController } from './controllers/products/GetProductController'
 import { AuthUserController } from './controllers/users/AuthUserController'
 import { CreateUserController } from './controllers/users/CreateUserController'
@@ -11,6 +14,7 @@ import { validateSchema } from './middleware/validateSchema'
 import { schema } from './schemas'
 
 export const router = Router()
+const upload = multer(uploadConfig)
 
 // Create a user
 router.post(
@@ -47,4 +51,13 @@ router.get(
   isAuthenticated,
   validateSchema(schema.getProductSchema),
   new GetProductController().handle
+)
+
+// Create products
+router.post(
+  '/products',
+  isAuthenticated,
+  isAdmin,
+  upload.single('file'),
+  new CreateProductController().handle
 )
