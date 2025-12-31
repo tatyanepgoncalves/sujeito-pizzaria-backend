@@ -3,6 +3,7 @@ import multer from 'multer'
 import uploadConfig from './config/multer'
 import { CreateCategoryController } from './controllers/categories/CreateCategoryController'
 import { GetCategoryController } from './controllers/categories/GetCategoryController'
+import { GetOrderController } from './controllers/orders/GetOrderController'
 import { CreateProductController } from './controllers/products/CreateProductController'
 import { DeleteProductController } from './controllers/products/DeleteProductController'
 import { GetProductByCategoryController } from './controllers/products/GetProductByCategoryController'
@@ -78,3 +79,6 @@ router.delete(
   isAdmin,
   new DeleteProductController().handle
 )
+
+// Get orders
+router.get('/orders', isAuthenticated, new GetOrderController().handle)
