@@ -4,6 +4,7 @@ import { createCategorySchema } from './createCategorySchema'
 import { createOrderSchema } from './createOrderSchema'
 import { createProductSchema } from './createProductSchema'
 import { createUserSchema } from './createUserSchema'
+import { deleteItemSchema } from './deleteItemSchema'
 import { getProductSchema } from './getProductSchema'
 
 export const schema = {
@@ -14,4 +15,5 @@ export const schema = {
   createProductSchema,
   createOrderSchema,
   addItemSchema,
+  deleteItemSchema,
 }
