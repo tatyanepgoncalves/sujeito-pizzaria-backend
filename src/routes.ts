@@ -6,6 +6,7 @@ import { GetCategoryController } from './controllers/categories/GetCategoryContr
 import { AddItemOrderController } from './controllers/orders/AddItemOrderController'
 import { CreateOrderController } from './controllers/orders/CreateOrderController'
 import { DeleteItemController } from './controllers/orders/DeleteItemController'
+import { DeleteOrderController } from './controllers/orders/DeleteOrderController'
 import { EditFinishOrderController } from './controllers/orders/EditFinishOrderController'
 import { EditOrderByProductionController } from './controllers/orders/EditOrderByProductionController'
 import { GetDetailsOrderController } from './controllers/orders/GetDetailsOrderController'
@@ -135,4 +136,12 @@ router.put(
   isAuthenticated,
   validateSchema(schema.editFinishOrderSchema),
   new EditFinishOrderController().handle
+)
+
+// Delete the order
+router.delete(
+  '/orders',
+  isAuthenticated,
+  validateSchema(schema.deleteOrderSchema),
+  new DeleteOrderController().handle
 )
