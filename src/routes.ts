@@ -6,6 +6,7 @@ import { GetCategoryController } from './controllers/categories/GetCategoryContr
 import { AddItemOrderController } from './controllers/orders/AddItemOrderController'
 import { CreateOrderController } from './controllers/orders/CreateOrderController'
 import { DeleteItemController } from './controllers/orders/DeleteItemController'
+import { EditOrderByProductionController } from './controllers/orders/EditOrderByProductionController'
 import { GetDetailsOrderController } from './controllers/orders/GetDetailsOrderController'
 import { GetOrderController } from './controllers/orders/GetOrderController'
 import { CreateProductController } from './controllers/products/CreateProductController'
@@ -117,4 +118,12 @@ router.get(
   isAuthenticated,
   validateSchema(schema.detailOrderSchema),
   new GetDetailsOrderController().handle
+)
+
+// Edit order to production
+router.put(
+  '/order/send',
+  isAuthenticated,
+  validateSchema(schema.editOrderSchema),
+  new EditOrderByProductionController().handle
 )
