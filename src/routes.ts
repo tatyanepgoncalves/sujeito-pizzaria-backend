@@ -6,6 +6,7 @@ import { GetCategoryController } from './controllers/categories/GetCategoryContr
 import { AddItemOrderController } from './controllers/orders/AddItemOrderController'
 import { CreateOrderController } from './controllers/orders/CreateOrderController'
 import { DeleteItemController } from './controllers/orders/DeleteItemController'
+import { GetDetailsOrderController } from './controllers/orders/GetDetailsOrderController'
 import { GetOrderController } from './controllers/orders/GetOrderController'
 import { CreateProductController } from './controllers/products/CreateProductController'
 import { DeleteProductController } from './controllers/products/DeleteProductController'
@@ -108,4 +109,12 @@ router.delete(
   isAuthenticated,
   validateSchema(schema.deleteItemSchema),
   new DeleteItemController().handle
+)
+
+// Get details to the order
+router.get(
+  '/order/detail',
+  isAuthenticated,
+  validateSchema(schema.detailOrderSchema),
+  new GetDetailsOrderController().handle
 )
