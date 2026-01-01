@@ -106,5 +106,6 @@ router.post(
 router.delete(
   '/order/remove',
   isAuthenticated,
+  validateSchema(schema.deleteItemSchema),
   new DeleteItemController().handle
 )
