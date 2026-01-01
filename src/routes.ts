@@ -6,6 +6,7 @@ import { GetCategoryController } from './controllers/categories/GetCategoryContr
 import { AddItemOrderController } from './controllers/orders/AddItemOrderController'
 import { CreateOrderController } from './controllers/orders/CreateOrderController'
 import { DeleteItemController } from './controllers/orders/DeleteItemController'
+import { EditFinishOrderController } from './controllers/orders/EditFinishOrderController'
 import { EditOrderByProductionController } from './controllers/orders/EditOrderByProductionController'
 import { GetDetailsOrderController } from './controllers/orders/GetDetailsOrderController'
 import { GetOrderController } from './controllers/orders/GetOrderController'
@@ -126,4 +127,12 @@ router.put(
   isAuthenticated,
   validateSchema(schema.editOrderSchema),
   new EditOrderByProductionController().handle
+)
+
+// Change the status order to ready
+router.put(
+  '/order/finish',
+  isAuthenticated,
+  validateSchema(schema.editFinishOrderSchema),
+  new EditFinishOrderController().handle
 )

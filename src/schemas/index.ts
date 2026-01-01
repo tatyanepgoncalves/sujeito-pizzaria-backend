@@ -6,6 +6,7 @@ import { createProductSchema } from './createProductSchema'
 import { createUserSchema } from './createUserSchema'
 import { deleteItemSchema } from './deleteItemSchema'
 import { detailOrderSchema } from './detailOrderSchema'
+import { editFinishOrderSchema } from './editFinishOrderSchema'
 import { editOrderSchema } from './editOrderSchema'
 import { getProductSchema } from './getProductSchema'
 
@@ -20,4 +21,5 @@ export const schema = {
   deleteItemSchema,
   detailOrderSchema,
   editOrderSchema,
+  editFinishOrderSchema,
 }
