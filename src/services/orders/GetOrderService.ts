@@ -8,7 +8,7 @@ export class GetOrderService {
   async execute({ draft }: GetOrderServiceProps) {
     const orders = await prismaClient.order.findMany({
       where: {
-        draft,
+        draft: draft === 'true' ? true : false,
       },
       select: {
         id: true,
