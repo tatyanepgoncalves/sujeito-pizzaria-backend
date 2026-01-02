@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cors())
 app.use(router)
 
-app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((error: Error, __: Request, res: Response, _: NextFunction) => {
   if (error instanceof Error) {
     return res.status(400).json({
       error: error.message,
