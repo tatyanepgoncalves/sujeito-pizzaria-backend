@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express'
-import { AuthUserService } from '../../services/users/AuthUserService'
+import { AuthUserService } from '../../services/users/AuthUserService.ts'
 
 export class AuthUserController {
   async handle(req: Request, res: Response) {

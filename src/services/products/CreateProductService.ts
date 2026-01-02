@@ -1,6 +1,6 @@
 import { Readable } from 'node:stream'
-import cloudinary from '../../config/cloudinary'
-import prismaClient from '../../prisma/index'
+import cloudinary from '../../config/cloudinary.ts'
+import prismaClient from '../../prisma/index.ts'
 
 interface CreateProductServiceProps {
   name: string

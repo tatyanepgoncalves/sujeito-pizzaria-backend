@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express'
-import { EditOrderByProductionService } from '../../services/orders/EditOrderByProductioService'
+import { EditOrderByProductionService } from '../../services/orders/EditOrderByProductioService.ts'
 
 export class EditOrderByProductionController {
   async handle(req: Request, res: Response) {

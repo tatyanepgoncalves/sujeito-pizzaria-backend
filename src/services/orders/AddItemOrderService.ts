@@ -1,4 +1,4 @@
-import prismaClient from '../../prisma'
+import prismaClient from '../../prisma/index.ts'
 
 interface AddItemOrderServiceProps {
   order_id: string

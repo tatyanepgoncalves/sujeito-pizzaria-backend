@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express'
-import { GetDetailsOrderService } from '../../services/orders/GetDetailsOrderService'
+import { GetDetailsOrderService } from '../../services/orders/GetDetailsOrderService.ts'
 
 export class GetDetailsOrderController {
   async handle(req: Request, res: Response) {

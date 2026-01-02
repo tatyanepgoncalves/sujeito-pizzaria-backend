@@ -1,4 +1,4 @@
-import prismaClient from '../../prisma'
+import prismaClient from '../../prisma/index.ts'
 
 interface GetDetailsOrderServiceProps {
   order_id: string

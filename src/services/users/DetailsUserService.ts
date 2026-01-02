@@ -1,4 +1,4 @@
-import prismaClient from '../../prisma/index'
+import prismaClient from '../../prisma/index.ts'
 
 export class DetailsUserService {
   async execute(user_id: string) {

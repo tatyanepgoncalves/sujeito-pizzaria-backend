@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from 'express'
 import jwt from 'jsonwebtoken'
-import { env } from '../env'
+import { env } from '../env.ts'
 
 interface PayLoad {
   sub: string

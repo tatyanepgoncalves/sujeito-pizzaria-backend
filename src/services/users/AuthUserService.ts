@@ -1,7 +1,7 @@
 import { compare } from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import { env } from '../../env'
-import prismaClient from '../../prisma'
+import { env } from '../../env.ts'
+import prismaClient from '../../prisma/index.ts'
 
 interface AuthUserServiceProps {
   email: string

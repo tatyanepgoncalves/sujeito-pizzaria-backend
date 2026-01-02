@@ -1,4 +1,4 @@
-import prismaClient from '../../prisma'
+import prismaClient from '../../prisma/index.ts'
 
 export class DeleteOrderService {
   async execute(order_id: string) {

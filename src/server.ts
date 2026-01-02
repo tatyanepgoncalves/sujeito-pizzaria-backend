@@ -5,8 +5,8 @@ import express, {
 } from 'express'
 import 'dotenv/config'
 import cors from 'cors'
-import { env } from './env'
-import { router } from './routes'
+import { env } from './env.ts'
+import { router } from './routes.ts'
 
 const app = express()
 
