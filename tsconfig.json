@@ -1,17 +1,16 @@
 {
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "_version": "22.0.0",
+
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "lib": ["es6"],
-    "allowJs": true,
-    "outDir": "dist",
-    "rootDir": "src",
-    "removeComments": true,
-    "strict": false,
+    "lib": ["es2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator"],
+    "module": "nodenext",
+    "target": "es2022",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+    "moduleResolution": "node16"
+  }
 }
